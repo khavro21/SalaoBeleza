@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+
+<style>
+.card mb-3 {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+</style>
+{% for post in posts %}
+
+<div class ="container">
+<div class="card mb-3">
+  {% if post.imagem != None %}
+  <img class="card-img-top" src="{{ post.imagem.url }}" width="100" height="600"/>
+  {% endif %}
+  <div class="card-body">
+    <h4 class="card-title">{{ post }}</h4>
+    <p class="card-text">{{ post.conteudo }}
+    </p>
+    <p class="card-text"><small class="text-muted">{{ post.data }}</small></p>
+  </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

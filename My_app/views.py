@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView
 
 
 # Create your views here.
@@ -35,12 +34,6 @@ def sales(request):
         'conteudo': Post.objects.values_list('conteudo'),
     }
     return render(request, 'sales.html', context)
-
-
-class PostListView(ListView):
-    model = Post
-    template_name = 'sales.html'
-    context_object_name = 'posts'
 
 
 def events(request):

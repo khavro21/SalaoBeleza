@@ -24,10 +24,6 @@ def galery(request):
     return render(request, 'galery.html')
 
 
-def specialists(request):
-    return render(request, 'specialists.html')
-
-
 def sales(request):
     context = {
         'posts': Post.objects.all().order_by('-data'),
